@@ -1,0 +1,16 @@
+{
+  "name": "mini-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Sydney Casey",
+  "license": "ISC",
+  "scripts": {
+    "start": "nodemon server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.19.0"
+  }
+}
