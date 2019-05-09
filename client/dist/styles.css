@@ -1,0 +1,32 @@
+body {
+  font-family: 'Assistant', sans-serif;
+}
+
+#jobs-list {
+  display: flex;
+  flex-direction: row;
+}
+
+#jobs-table {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  border: solid lightgrey 1px;
+  border-radius: 25px;
+  margin-top: 50px;
+}
+
+#headers {
+  display: flex;
+  justify-content: space-between;
+}
+
+#company {
+  display: flex;
+  flex-direction: column;
+}
+
+#applied {
+  display: flex;
+  flex-direction: column;
+}
