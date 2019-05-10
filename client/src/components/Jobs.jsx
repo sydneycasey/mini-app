@@ -1,4 +1,5 @@
 import React from 'react';
+import { puts } from 'util';
 import axios from 'axios';
 
 class Jobs extends React.Component {
@@ -6,7 +7,6 @@ class Jobs extends React.Component {
     super(props);
     this.state = {
       jobs: [],
-      showModal: false
     }
     this.handleDelete = this.handleDelete.bind(this);
   }
@@ -20,13 +20,21 @@ class Jobs extends React.Component {
 
   handleDelete(job) {
 
-    var data = { id: job.id, company: job.company }
+    let data = { id: job.id, company: job.company }
     console.log(job);
 
     axios.post('/deleteJob', data)
       .then(data => console.log(data))
       .catch(error => console.log(error))
   };
+
+  setAppStatus(job) {
+
+
+    let data = { id: job.id, applied: job.applied };
+
+    axios.put('/applied', )
+  }
 
   render() {
     return (
@@ -37,13 +45,13 @@ class Jobs extends React.Component {
             <th id="applied">Applied</th>
             <th id="outreach">Outreach Sent</th>
             <th id="received">Callback Received</th>
-            <th id="action">Action</th>
+            <th id="action">Actions</th>
           </tr>
         </thead>
         <tbody>
           {this.state.jobs.map((job) => (
             <tr key={job.id} id="jobs-list">
-              <td id="company">{job.company}</td> //onclick should turn to textbox. new company name should be saved and sent to server to update db
+              <td id="company">{job.company}</td> {/*onclick should turn to textbox. new company name should be saved and sent to server to update db*/}
               <td id="applied">
                 {job.applied ? 'yes' : 'no'}
               </td>
@@ -54,7 +62,10 @@ class Jobs extends React.Component {
               {/* <td id="sent_email">{job.outreach ? job.sent_email : null}</td> */}
               <td id="callback">{job.callback ? 'yes' : 'no'}</td>
               {/* <td id="received">{job.callback ? job.received : null}</td> */}
-              <td id="action"><a>Edit</a>|<button onClick={() => this.handleDelete(job)}>Delete</button></td>
+              <td id="action">
+              <button>Edit</button>
+              <button onClick={() => this.handleDelete(job)}>Delete</button>
+              </td>
             </tr>
           ))}
         </tbody>

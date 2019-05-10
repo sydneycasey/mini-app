@@ -20,8 +20,8 @@ const addJob = (data, callback) => {
   db.query('INSERT INTO apps (company, applied, sent_app, outreach, sent_email, callback, received) VALUES ? ', [data], callback);
 };
 
-const editJob = (job, data, callback) => {
-  db.query(`UPDATE apps SET company = ? WHERE company = ?`, [job], [data], callback);
+const editAppStatus = (status, id, callback) => {
+  db.query(`UPDATE apps SET applied = ? WHERE id = ?`, [status], [id], callback);
 }
 
 const deleteJob = (id, callback) => {
@@ -31,6 +31,6 @@ const deleteJob = (id, callback) => {
 module.exports = {
   getJobs,
   addJob,
-  editJob,
+  editAppStatus,
   deleteJob
 };

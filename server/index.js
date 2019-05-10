@@ -21,7 +21,7 @@ app.post('/newJob', (req, res) => {
   db.addJob([req.body], (err, response) => {
     if (err) console.log('server error', err);
     else { console.log('successfully inserted', req.body)}
-  })
+  });
 });
 
 app.post('/deleteJob', (req, res) => {
@@ -29,7 +29,15 @@ app.post('/deleteJob', (req, res) => {
   db.deleteJob(req.body.id, (err, result) => {
     if (err) console.log(err);
     else { res.send(`delete ${req.body.company}`) }
-  })
-})
+  });
+});
+
+app.put('/applied', (req, res) => {
+  db.editAppStatus(req.body.applied, req.body.id, (err, result) => {
+    if (err) console.log(err);
+    else { console.log('success', result); }
+  });
+});
+
 
 app.listen(port, () => console.log(`listening at ${port}`));

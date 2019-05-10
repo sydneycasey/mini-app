@@ -1,6 +1,31 @@
 
+/*
+.triangle {
+  display: flex;
+  justify-content: center;
+  width: 0;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-bottom: 60px solid white;
+} */
+
+#logo {
+  display: flex;
+  font-family: 'Lobster', cursive;
+  font-size: 30px;
+  color: #00ffd0;
+  width: 90px;
+  padding: 5px;
+  border: solid black 1px;
+  border-radius: 25px;
+  background-color: white;
+  box-shadow: black 5px 10px;
+}
+
 body {
   font-family: 'Assistant', sans-serif;
+  background-color: #efefef;
 }
 
 #job-form {
@@ -8,6 +33,17 @@ body {
   flex-direction: row;
   width: 600px;
   margin: 100px;
+  padding: 20px;
+  border: solid lightgrey 1px;
+  border-radius: 25px;
+  background-color: white;
+  box-shadow: 5px 10px;
+  align-content: center;
+}
+
+#submit-btn:hover {
+  cursor: pointer;
+  color: lightgrey;
 }
 
 #jobs-list {
@@ -24,20 +60,12 @@ body {
   border-radius: 25px;
   margin: 100px;
   padding:20px;
-  width: 500px;
+  width: 600px;
+  background-color: white;
+  box-shadow: 5px 10px;
 }
 
 #headers {
   display: flex;
   justify-content: space-between;
-}
-
-#company {
-  display: flex;
-  flex-direction: column;
-}
-
-#applied {
-  display: flex;
-  flex-direction: column;
 }
