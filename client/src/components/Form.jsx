@@ -7,11 +7,11 @@ class Form extends React.Component {
     this.state = {
       company: '',
       applied: false,
-      sent_app: Date,
+      sent_app: null,
       outreach: false,
-      sent_email: Date,
+      sent_email: null,
       callback: false,
-      received: Date
+      received: null
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -88,7 +88,7 @@ class Form extends React.Component {
             defaultValue="2019-05-02"
             onChange={this.handleChange} />
         </label>
-        <input type="submit" value="+" />
+        <input id="submit-btn" type="submit" value="+" />
       </form>
     )
   }

@@ -22,6 +22,14 @@ app.post('/newJob', (req, res) => {
     if (err) console.log('server error', err);
     else { console.log('successfully inserted', req.body)}
   })
+});
+
+app.post('/deleteJob', (req, res) => {
+  console.log(req.body);
+  db.deleteJob(req.body.id, (err, result) => {
+    if (err) console.log(err);
+    else { res.send(`delete ${req.body.company}`) }
+  })
 })
 
 app.listen(port, () => console.log(`listening at ${port}`));
